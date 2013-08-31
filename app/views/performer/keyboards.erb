@@ -1,0 +1,70 @@
+<ul class="nav nav-tabs" id="myTab">
+  <li class="active"><a href="#home">Keyboards</a></li>
+  <li><a href="#guitars">Guitar</a></li>
+  <li><a href="#singer">Singer</a></li>
+  <li><a href="#drums">Drums</a></li>
+  <li><a href="#midiplayer">Midi Player</a></li>
+  <li><a href="#recorder">Recorder</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="home">
+    <table class="table">
+      <% 3.times do  %>
+        <tr>
+          <td width="150px">Keyboard <%= rand(10) %> <br/> FLUID SYNTH</td>
+          <td>
+            <div class="btn-toolbar">
+              <div class="btn-group btn-group-lg">
+                <button type="button" class="btn btn-default">Tron I</button>
+                <button type="button" class="btn btn-default">TRON Choir II</button>
+                <button type="button" class="btn btn-default">Hammond III</button>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="btn-toolbar">
+              <div class="btn-group btn-group-lg">
+                <button type="button" class="btn btn-default">Chorus</button>
+                <button type="button" class="btn btn-default">Overdrive</button>
+              </div>
+            </div>
+          </td>
+          <td width="200px;" style="vertical-align:bottom;">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%; height:200px;">
+                <span class="sr-only">60% Volume</span>
+              </div>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+
+
+  <div class="tab-pane" id="guitars">
+    THIS IS PROFILE
+  </div>
+  <div class="tab-pane" id="singer">
+    THIS IS MESSAGES
+  </div>
+  <div class="tab-pane" id="drums">
+    THIS IS SETTINGS
+  </div>
+  <div class="tab-pane" id="midiplayer">
+    THIS IS SETTINGS
+  </div>
+  <div class="tab-pane" id="recprder">
+    THIS IS SETTINGS
+  </div>
+</div>
+
+<% content_for :head do  %>
+  <script>
+    $(function () {
+      $('#myTab a:last').tab('show');
+    })
+  </script>
+<% end %>

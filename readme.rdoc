@@ -1,0 +1,154 @@
+=== The Musical Box
+
+ The Musical box is a small linux machine that allow musical players to use as a synth, guitar effect units, a practice tools and a recorder
+
+
+
+=== The Keyboard Rig
+
+ Connect up to three USB Keyboards and use the  TheMusicMachine live keyboard rig using powerful synth and samplers
+
+
+ Main Features:
+  * load your own sound fonts and build your own sound library
+  * presets for major synth
+
+ Fluid Synth (SF2)
+   URL: http://sourceforge.net/apps/trac/fluidsynth/
+
+ Zynaddsubfx
+   URL: http://zynaddsubfx.sourceforge.net/
+
+ Bristol: ( for vintage synth emulation)
+   URL: http://www.linuxlinks.com/article/20080629042942467/Bristol.html
+ 
+ amSynth: (Two Oscilator Synth) 
+   URL: https://code.google.com/p/amsynth/
+
+ AlsaModularSynth
+   URL: http://alsamodular.sourceforge.net/
+
+
+=== Guitar Amplifiers and Effects
+ With TheMusicMachine users can play guitar connecting their electric guitar to the machine guitar input jack.
+ on the machine there are wide selection of amplifier emulators , guitar effect 
+
+  Main Features:
+    * Amplifier Emulations
+    * Guitar Effects
+    * Midi Player for backing track and practice
+    * setup your own rigs and switch with one click
+    * Great for Guitar / Bass / Singers
+
+Rackarrack : Amp and Effect suite with preset
+  URL: http://rakarrack.sourceforge.net/pyb.html
+
+Guitarix: Amp and Effect suite with preset
+  URL: http://guitarix.sourceforge.net/
+
+
+=== Midi players
+
+  The Music Machine plays midi files and 
+  
+  Main Features:
+  * Play midi files 
+  * Change Speed and Scale
+  * Loop Mode 
+  * Remove { Drums | Guitars | singer | keyboards }
+  * export to .ogg file 
+
+
+  pmidi
+
+  TiMidity++ 
+    URL: http://timidity.sourceforge.net/screenshots.html
+
+  Midish
+    URL: http://www.midish.org/
+
+
+
+
+ == The Commands 
+
+ === Midi Player Commands
+ load file "/public/midi/genesis.mid"
+ change_key { A# | Bb }
+ change_speed {440}
+ mute {singer | guitars | keyboards | drums}
+ mute_channels 1,3,4
+ load_instrument_on_channel 10, 209-COLLINS-DRUMS
+ play
+ stop
+ export file_name[.ogg]
+
+
+ === Recorder Commands
+ start_record
+ stop_record
+ export file_name[.ogg]
+
+
+ === Songs 
+  save_as <new-name>
+  share { facebook | twitter } url
+ 
+ 
+
+
+ === Sound / Preset 
+  save_as <new-name>
+  info => { name,version, instrument-name, instrument-version,
+			effect_slot_1..4, audition-midi-file-name, volume, amplifier, panning , 
+			midi-learned-commands
+		  }
+  audition    										plays the sounds for 5 seconds
+  insert_effect_into_slot 1..4  { overdrive | delay | chorus | lesslie | phazer  | amp } 
+  set_effect_params_on_slot 1..4 , key , value #    
+  
+
+
+ === Synth / Sampler 
+ load_sound_on_channel 1, 101-PIANO-1
+ connect_to_keyboard_channel  21-PIANO-88 , 1
+ connect_to_keyboard_channel  22-KEYRIG-49i , 2
+ change_volume(value)
+ change_parmameter(key,value) # key { volume | frequency | filter | panning | lesslie | overdrive | delay | chorus }
+ add_sounds_to_keyboard
+ save_as_preset U-3001-My-Vilolins 
+ 
+ 
+ === Effects / Amp simulation / Cabinate
+  save_as_preset <new-name>
+  save_as_sound <new-name>
+  change_value { key, value}
+  load_preset
+  load_sound
+  info {
+	name, version, amplifier , cabinet, midi-learned-command, 
+	current_settings # key => value
+    setting_keys # => volume, panning, overdrive-ratio, delay-time ... # the available commands for this effect
+  }
+ 
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

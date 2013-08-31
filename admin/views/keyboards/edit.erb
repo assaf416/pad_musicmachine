@@ -1,0 +1,10 @@
+<ul class="nav nav-tabs">
+  <li> <%= link_to tag_icon(:list, pat(:list)), url(:keyboards, :index) %></li>
+  <li> <%= link_to tag_icon(:plus, pat(:new)), url(:keyboards, :new) %></li>
+  <li class="active"> <%= link_to tag_icon(:edit, pat(:edit)), url(:keyboards, :edit, :id => @keyboard.id) %></li>
+</ul>
+<div class="tabs-content">
+  <% form_for :keyboard, url(:keyboards, :update, :id => @keyboard.id), :method => :put, :class => 'form-horizontal' do |f| %>
+    <%= partial 'keyboards/form', :locals => { :f => f } %>
+  <% end %>
+</div>
